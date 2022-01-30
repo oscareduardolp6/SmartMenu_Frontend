@@ -1,13 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from "formik"
+import { addDays, getDateInInputHtmlFormat } from "../Services/myDate"
 import { addProduct } from "../Services/ProductService"
 
 export const RegisterProduct = () => {
+  const today = new Date()
+  const nextWeek = addDays(today, 7) 
   const initialValues = {
     name      : '', 
     brand     : '', 
     variation : '', 
-    expiration: new Date(), 
-    price     : 0
+    expiration: getDateInInputHtmlFormat(nextWeek), 
+    price     : ''
   } 
   return (
     <Formik
