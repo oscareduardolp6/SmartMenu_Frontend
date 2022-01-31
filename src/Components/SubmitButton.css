@@ -1,0 +1,18 @@
+button {
+  border: none;
+  border-radius: 5px; 
+  padding: 1em; 
+  margin-top: 1em; 
+  width: 65% ; 
+  opacity: 0.9;
+  color: #fff; 
+  font-weight: 500; 
+  font-style: bold;
+  cursor: pointer;
+  box-sizing: content-box;
+  background-color: rgb(206, 108, 17)
+}
+
+button:hover{
+  opacity: 1;
+}

@@ -39,7 +39,7 @@ exports.__esModule = true;
 exports.addProduct = void 0;
 var ApiData_1 = require("./ApiData");
 var addProduct = function (product) { return __awaiter(void 0, void 0, void 0, function () {
-    var endpoint, url, body, mode, headers, options, myResponse, result, added;
+    var endpoint, url, body, mode, headers, options, myResponse, result;
     var _a;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -49,7 +49,7 @@ var addProduct = function (product) { return __awaiter(void 0, void 0, void 0, f
                 endpoint = 'addProduct';
                 url = ApiData_1.baseUrl + endpoint;
                 body = JSON.stringify(product);
-                mode = 'no-cors';
+                mode = 'cors';
                 headers = new Headers({ 'Content-Type': 'application/json' });
                 options = {
                     method: 'POST',
@@ -57,16 +57,12 @@ var addProduct = function (product) { return __awaiter(void 0, void 0, void 0, f
                     body: body,
                     mode: mode
                 };
-                console.log(options);
                 return [4 /*yield*/, fetch(url, options)];
             case 1:
                 myResponse = _b.sent();
-                return [4 /*yield*/, myResponse.text()];
-            case 2:
-                result = _b.sent();
-                added = (result == 'OK');
+                result = myResponse.statusText == 'OK';
                 console.log(result);
-                return [2 /*return*/, added];
+                return [2 /*return*/, result];
         }
     });
 }); };

@@ -1,11 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
+import { MainRegisterProduct } from './Components/MainRegisterProduct';
+
 import './App.css';
-import { RegisterProduct } from './Components/RegisterProduct';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<RegisterProduct />} />
+      <Route path='/addProduct' element={ <MainRegisterProduct />} />
+      <Route path='/' element={<MainRegisterProduct />} />
     </Routes>
   );
 }
